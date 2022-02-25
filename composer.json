@@ -1,0 +1,20 @@
+{
+    "name": "laradocs/yunexpress",
+    "description": "云途物流 SDK",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Laradocs\\YunExpress\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "laradocs",
+            "email": "75692074@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    }
+}
