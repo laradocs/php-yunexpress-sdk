@@ -59,15 +59,6 @@ class ClientTest extends TestCase
         $this->assertSame(2, $data[0]['Status']);
     }
 
-    public function testCreateOrder()
-    {
-        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
-        $factory->shouldReceive('factory')->andReturn($this->factory());
-        $data = $factory->createOrder(['xxx']);
-        $this->assertNotEmpty($data);
-        $this->assertSame(1, $data[0]['Success']);
-    }
-
     public function testGetSender()
     {
         $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
@@ -77,6 +68,15 @@ class ClientTest extends TestCase
         $this->assertSame('CN', $data['CountryCode']);
     }
 
+    public function testCreateOrder()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->createOrder(['xxx']);
+        $this->assertNotEmpty($data);
+        $this->assertSame(1, $data[0]['Success']);
+    }
+
     public function testGetOrder()
     {
         $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
@@ -84,6 +84,15 @@ class ClientTest extends TestCase
         $data = $factory->getOrder('xxx');
         $this->assertNotEmpty($data);
         $this->assertSame('BKPHR', $data['ShippingMethodCode']);
+    }
+
+    public function testUpdateWeight()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->updateWeight('2022021008567562', 0.4);
+        $this->assertNotEmpty($data);
+        $this->assertSame('success', $data['Status']);
     }
 
     public function testGetShippingFeeDetail()
@@ -162,6 +171,9 @@ class ClientTest extends TestCase
         $factory->shouldReceive('post')->withAnyArgs()->andReturnUsing(function ($url) {
             if (str_contains($url, 'CreateOrder')) {
                 $body = file_get_contents(__DIR__ . '/create_order.json');
+            }
+            if (str_contains($url, 'UpdateWeight')) {
+                $body = file_get_contents(__DIR__ . '/update_weight.json');
             }
             if (str_contains($url, 'GetCarrier')) {
                 $body = file_get_contents(__DIR__ . '/get_carrier.json');

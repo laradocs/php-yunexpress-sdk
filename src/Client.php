@@ -193,6 +193,27 @@ class Client
     }
 
     /**
+     * 修改订单预报重量
+     *
+     * @param string $orderNumber 订单号
+     * @param float $weight 修改重量
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function updateWeight(string $orderNumber, float $weight): array
+    {
+        $response = $this->factory()
+            ->post('WayBill/UpdateWeight', [
+                'json' => [
+                    'OrderNumber' => $orderNumber,
+                    'Weight' => $weight,
+                ]
+            ]);
+
+        return $this->body($response);
+    }
+
+    /**
      * 查询物流运费明细
      *
      * @param string $wayBillNumber 运单号
