@@ -6,7 +6,10 @@
     "autoload": {
         "psr-4": {
             "Laradocs\\YunExpress\\": "src/"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "authors": [
         {
@@ -15,6 +18,11 @@
         }
     ],
     "require": {
-        "php": ">=7.0"
+        "php": "^7.3|^8.0",
+        "guzzlehttp/guzzle": "^7.4"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.5",
+        "phpunit/phpunit": "^9.5"
     }
 }
