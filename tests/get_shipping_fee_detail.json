@@ -1,0 +1,24 @@
+{
+  "Item": {
+    "ShippingMethodName": "云途全球专线挂号（标快普货）",
+    "CountryCode": "US",
+    "ChineseName": "美国",
+    "CustomerOrderNumber": "2222222222222222",
+    "WayBillNumber": "YT2222222222222222",
+    "TrackingNumber": "D2222222",
+    "GrossWeight": null,
+    "ChargeWeight": null,
+    "Freight": 0.0,
+    "FuelSurcharge": 0.0,
+    "RegistrationFee": 0.0,
+    "ProcessingFee": 0.0,
+    "OtherFee": 0.0,
+    "TotalFee": 0.0,
+    "OccurrenceTime": null,
+    "StandardMoney": 0.0
+  },
+  "Code": "0000",
+  "Message": "提交成功!",
+  "RequestId": "0HMFNARVS1JKE:00000002",
+  "TimeStamp": "2022-02-26T08:12:30.1887984+00:00"
+}

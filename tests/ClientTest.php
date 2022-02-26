@@ -77,6 +77,15 @@ class ClientTest extends TestCase
         $this->assertSame('BKPHR', $data['ShippingMethodCode']);
     }
 
+    public function testGetShippingFeeDetail()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->getShippingFeeDetail('xxx');
+        $this->assertNotEmpty($data);
+        $this->assertSame('US', $data['CountryCode']);
+    }
+
     protected function factory()
     {
         $factory = Mockery::mock(Guzzle::class);
@@ -101,6 +110,9 @@ class ClientTest extends TestCase
             }
             if (str_contains($url, 'GetOrder')) {
                 $body = file_get_contents(__DIR__ . '/get_order.json');
+            }
+            if (str_contains($url, 'GetShippingFeeDetail')) {
+                $body = file_get_contents(__DIR__ . '/get_shipping_fee_detail.json');
             }
 
             return new Response(200, [], $body);

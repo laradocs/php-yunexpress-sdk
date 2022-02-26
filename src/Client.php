@@ -120,7 +120,7 @@ class Client
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getSender(string $orderNumber)
+    public function getSender(string $orderNumber): array
     {
         $response = $this->factory()
             ->get('WayBill/GetSender?OrderNumber=' . $orderNumber);
@@ -135,10 +135,25 @@ class Client
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getOrder(string $orderNumber)
+    public function getOrder(string $orderNumber): array
     {
         $response = $this->factory()
             ->get('WayBill/GetOrder?OrderNumber=' . $orderNumber);
+
+        return $this->body($response);
+    }
+
+    /**
+     * 查询物流运费明细
+     *
+     * @param string $wayBillNumber 运单号
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getShippingFeeDetail(string $wayBillNumber): array
+    {
+        $response = $this->factory()
+            ->get('Freight/GetShippingFeeDetail?wayBillNumber=' . $wayBillNumber);
 
         return $this->body($response);
     }
