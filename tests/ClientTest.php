@@ -101,7 +101,16 @@ class ClientTest extends TestCase
         $factory->shouldReceive('factory')->andReturn($this->factory());
         $data = $factory->delete(2, '2022021008567562');
         $this->assertNotEmpty($data);
-        $this->assertSame('5012', $data['Status']);
+        $this->assertSame('2022021008567562', $data['OrderNumber']);
+    }
+
+    public function testIntercept()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->intercept(2, '2022021008567562', '测试拦截');
+        $this->assertNotEmpty($data);
+        $this->assertSame('2022021008567562', $data['OrderNumber']);
     }
 
     public function testGetShippingFeeDetail()
@@ -186,6 +195,9 @@ class ClientTest extends TestCase
             }
             if (str_contains($url, 'Delete')) {
                 $body = file_get_contents(__DIR__ . '/delete.json');
+            }
+            if (str_contains($url, 'Intercept')) {
+                $body = file_get_contents(__DIR__ . '/intercept.json');
             }
             if (str_contains($url, 'GetCarrier')) {
                 $body = file_get_contents(__DIR__ . '/get_carrier.json');

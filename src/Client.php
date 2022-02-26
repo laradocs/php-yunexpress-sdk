@@ -235,6 +235,27 @@ class Client
     }
 
     /**
+     * 订单拦截
+     *
+     * @param int $orderType 单号类型：1-云途单号，2-客户订单号，3-跟踪号
+     * @param string $orderNumber 单号
+     * @param string $remark 拦截原因
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function intercept(int $orderType, string $orderNumber, string $remark): array
+    {
+        $response = $this->factory()
+            ->post ( 'WayBill/Intercept', [
+                'OrderType' => $orderType,
+                'OrderNumber' => $orderNumber,
+                'Remark' => $remark,
+            ] );
+
+        return $this->body($response);
+    }
+
+    /**
      * 查询物流运费明细
      *
      * @param string $wayBillNumber 运单号
