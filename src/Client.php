@@ -84,20 +84,14 @@ class Client
      * @param string $countryCode 国家简码
      * @param float $weight 包裹重量,单位 kg,支持 3 位小数
      * @param int $packageType 包裹长度,单位 cm,不带小数,不填写默认 1
-     * @param int|null $length 包裹宽度,单位 cm,不带小数,不填写默认 1
-     * @param int|null $width 包裹高度,单位 cm,不带小数,不填写默认 1
-     * @param int|null $height 包裹类型,1-带电,0-普货,默认 1
+     * @param int $length 包裹宽度,单位 cm,不带小数,不填写默认 1
+     * @param int $width 包裹高度,单位 cm,不带小数,不填写默认 1
+     * @param int $height 包裹类型,1-带电,0-普货,默认 1
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getPriceTrial(string $countryCode, float $weight, int $packageType = 1, int $length = 1, int $width = 1, int $height = 1): array
     {
-        if (!is_null($width)) {
-            $width = '&Width=' . $width;
-        }
-        if (!is_null($height)) {
-            $height = '&Height=' . $height;
-        }
         $response = $this->factory()
             ->get('Freight/GetPriceTrial?CountryCode=' . $countryCode . '&Weight=' . $weight . '&Length=' . $length . '&Width=' . $width . '&Height=' . $height . '&PackageType=' . $packageType);
 
@@ -115,6 +109,21 @@ class Client
     {
         $response = $this->factory()
             ->get('Waybill/GetTrackingNumber?CustomerOrderNumber=' . $customerOrderNumber);
+
+        return $this->body($response);
+    }
+
+    /**
+     * 查询发件人信息
+     *
+     * @param string $orderNumber 查询号码,可输入运单号、订单号、跟踪号
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getSender(string $orderNumber)
+    {
+        $response = $this->factory()
+            ->get('WayBill/GetSender?OrderNumber=' . $orderNumber);
 
         return $this->body($response);
     }
