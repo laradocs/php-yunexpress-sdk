@@ -50,7 +50,7 @@ class Client
     /**
      * 查询运输方式
      *
-     * @param string|null $countryCode 国家简码，未填写国家代表查询所有运输方式
+     * @param ?string $countryCode 国家简码(非必填)
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
@@ -83,11 +83,11 @@ class Client
      * 查询价格
      *
      * @param string $countryCode 国家简码
-     * @param float $weight 包裹重量，单位 kg，支持 3 位小数
-     * @param int $packageType 包裹长度，单位 cm，不带小数，不填写默认 1
-     * @param int $length 包裹宽度，单位 cm，不带小数，不填写默认 1
-     * @param int $width 包裹高度，单位 cm，不带小数，不填写默认 1
-     * @param int $height 包裹类型，1-带电，0-普货，默认 1
+     * @param float $weight 包裹重量：单位 kg(支持 3 位小数)
+     * @param int $packageType 包裹长度：单位 cm(非必填，默认为 1)
+     * @param int $length 包裹宽度：单位 cm(非必填，默认为 1)
+     * @param int $width 包裹高度：单位 cm(非必填，默认为 1)
+     * @param int $height 包裹类型：1-带电|0-普货(非必填，默认为 1)
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
@@ -103,6 +103,7 @@ class Client
      * 查询跟踪号
      *
      * @param string $customerOrderNumber 客户订单号，多个以逗号分开
+     * 例：YT2222222222,YT11111111111
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
@@ -117,7 +118,7 @@ class Client
     /**
      * 查询发件人信息
      *
-     * @param string $orderNumber 查询号码，可输入运单号、订单号、跟踪号
+     * @param string $orderNumber 查询号码：运单号|订单号|跟踪号
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
@@ -131,7 +132,8 @@ class Client
 
     /**
      * 运单申请
-     *
+     * 支持批量申请，一次最多 10 条
+     * 非必填数据请查看文档
      * @param array $attributes
      * 用法：
      * ```php
@@ -180,7 +182,7 @@ class Client
     /**
      * 查询运单
      *
-     * @param string $orderNumber 物流系统运单号，客户订单或跟踪号
+     * @param string $orderNumber 物流系统运单号：客户订单|跟踪号
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
@@ -216,7 +218,7 @@ class Client
     /**
      * 订单删除
      *
-     * @param int $orderType 单号类型：1-云途单号，2-客户订单号，3-跟踪号
+     * @param int $orderType 单号类型：1-云途单号|2-客户订单号|3-跟踪号
      * @param string $orderNumber 单号
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -237,7 +239,7 @@ class Client
     /**
      * 订单拦截
      *
-     * @param int $orderType 单号类型：1-云途单号，2-客户订单号，3-跟踪号
+     * @param int $orderType 单号类型：1-云途单号|2-客户订单号|3-跟踪号
      * @param string $orderNumber 单号
      * @param string $remark 拦截原因
      * @return array
@@ -258,7 +260,7 @@ class Client
     /**
      * 标签打印
      *
-     * @param array $orderNumbers 物流系统运单号，客户订单或跟踪号
+     * @param array $orderNumbers 物流系统运单号：客户订单|跟踪号
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
@@ -295,7 +297,7 @@ class Client
      * @param string $contact 联系人
      * @param string $mobile 联系人电话
      * @param string $telephone 联系人电话
-     * @param string $name 客户名称/公司名称
+     * @param string $name 客户名称|公司名称
      * @param string $email 邮箱
      * @param string $address 详细地址
      * @param int $platForm 平台 ID(通途平台--2)
@@ -326,7 +328,7 @@ class Client
      * 查询物流轨迹信息
      * 根据轨迹订阅查询轨迹
      *
-     * @param string $orderNumber 物流系统运单号，客户订单或跟踪号
+     * @param string $orderNumber 物流系统运单号：客户订单|跟踪号
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
@@ -342,7 +344,7 @@ class Client
      * 查询物流轨迹信息
      * 查询全程轨迹
      *
-     * @param string $orderNumber 物流系统运单号，客户订单或跟踪号
+     * @param string $orderNumber 物流系统运单号：客户订单|跟踪号
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
@@ -357,7 +359,7 @@ class Client
     /**
      * 查询末端派送商
      *
-     * @param array $orderNumbers 查询号码，可输入运单号、订单号、跟踪号
+     * @param array $orderNumbers 查询号码：运单号|订单号|跟踪号
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
@@ -374,17 +376,17 @@ class Client
     /**
      * IOSS号备案
      *
-     * @param int $iossType 0-个人 1-平台
-     * @param string|null $platformName 平台名称，类型为 1 时需提供
-     * @param string $iossNumber 2位字母加10位数字，reg: ^[a-zA-Z]{2}[0- 9]{10}$
-     * @param string|null $company IOSS号注册公司名称
-     * @param string|null $country 2位国家简码
-     * @param string|null $street IOSS号街道地址
-     * @param string|null $city IOSS号所在城市
-     * @param string|null $province IOSS号所在省/州
-     * @param string|null $postalCode IOSS号邮编
-     * @param string|null $mobilePhone IOSS号手机号
-     * @param string|null $email IOSS号电子邮箱
+     * @param int $iossType Ioss类型：0-个人|1-平台
+     * @param string|null $platformName 平台名称(类型为 1 时必填)
+     * @param string $iossNumber 2位字母加10位数字(reg: ^[a-zA-Z]{2}[0- 9]{10}$)
+     * @param string|null $company IOSS号注册公司名称(非必填)
+     * @param string|null $country 2位国家简码(非必填)
+     * @param string|null $street IOSS号街道地址(非必填)
+     * @param string|null $city IOSS号所在城市(非必填)
+     * @param string|null $province IOSS号所在省/州(非必填)
+     * @param string|null $postalCode IOSS号邮编(非必填)
+     * @param string|null $mobilePhone IOSS号手机号(非必填)
+     * @param string|null $email IOSS号电子邮箱(非必填)
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
