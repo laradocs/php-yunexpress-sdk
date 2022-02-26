@@ -95,6 +95,15 @@ class ClientTest extends TestCase
         $this->assertSame('success', $data['Status']);
     }
 
+    public function testDelete()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->delete(2, '2022021008567562');
+        $this->assertNotEmpty($data);
+        $this->assertSame('5012', $data['Status']);
+    }
+
     public function testGetShippingFeeDetail()
     {
         $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
@@ -174,6 +183,9 @@ class ClientTest extends TestCase
             }
             if (str_contains($url, 'UpdateWeight')) {
                 $body = file_get_contents(__DIR__ . '/update_weight.json');
+            }
+            if (str_contains($url, 'Delete')) {
+                $body = file_get_contents(__DIR__ . '/delete.json');
             }
             if (str_contains($url, 'GetCarrier')) {
                 $body = file_get_contents(__DIR__ . '/get_carrier.json');

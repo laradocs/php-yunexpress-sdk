@@ -214,6 +214,27 @@ class Client
     }
 
     /**
+     * 订单删除
+     *
+     * @param int $orderType 单号类型：1-云途单号，2-客户订单号，3-跟踪号
+     * @param string $orderNumber 单号
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function delete(int $orderType, string $orderNumber): array
+    {
+        $response = $this->factory()
+            ->post('WayBill/Delete', [
+                'json' => [
+                    'OrderType' => $orderType,
+                    'OrderNumber' => $orderNumber,
+                ]
+            ]);
+
+        return $this->body($response);
+    }
+
+    /**
      * 查询物流运费明细
      *
      * @param string $wayBillNumber 运单号
