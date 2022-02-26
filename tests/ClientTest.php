@@ -68,6 +68,15 @@ class ClientTest extends TestCase
         $this->assertSame('CN', $data['CountryCode']);
     }
 
+    public function testGetOrder()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->getOrder('xxx');
+        $this->assertNotEmpty($data);
+        $this->assertSame('BKPHR', $data['ShippingMethodCode']);
+    }
+
     protected function factory()
     {
         $factory = Mockery::mock(Guzzle::class);
@@ -89,6 +98,9 @@ class ClientTest extends TestCase
             }
             if (str_contains($url, 'GetSender')) {
                 $body = file_get_contents(__DIR__ . '/get_sender.json');
+            }
+            if (str_contains($url, 'GetOrder')) {
+                $body = file_get_contents(__DIR__ . '/get_order.json');
             }
 
             return new Response(200, [], $body);

@@ -49,7 +49,7 @@ class Client
     /**
      * 查询运输方式
      *
-     * @param string|null $countryCode 国家简码,未填写国家代表查询所有运输方式
+     * @param string|null $countryCode 国家简码，未填写国家代表查询所有运输方式
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
@@ -82,11 +82,11 @@ class Client
      * 查询价格
      *
      * @param string $countryCode 国家简码
-     * @param float $weight 包裹重量,单位 kg,支持 3 位小数
-     * @param int $packageType 包裹长度,单位 cm,不带小数,不填写默认 1
-     * @param int $length 包裹宽度,单位 cm,不带小数,不填写默认 1
-     * @param int $width 包裹高度,单位 cm,不带小数,不填写默认 1
-     * @param int $height 包裹类型,1-带电,0-普货,默认 1
+     * @param float $weight 包裹重量，单位 kg，支持 3 位小数
+     * @param int $packageType 包裹长度，单位 cm，不带小数，不填写默认 1
+     * @param int $length 包裹宽度，单位 cm，不带小数，不填写默认 1
+     * @param int $width 包裹高度，单位 cm，不带小数，不填写默认 1
+     * @param int $height 包裹类型，1-带电，0-普货，默认 1
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
@@ -101,7 +101,7 @@ class Client
     /**
      * 查询跟踪号
      *
-     * @param string $customerOrderNumber 客户订单号,多个以逗号分开
+     * @param string $customerOrderNumber 客户订单号，多个以逗号分开
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
@@ -116,7 +116,7 @@ class Client
     /**
      * 查询发件人信息
      *
-     * @param string $orderNumber 查询号码,可输入运单号、订单号、跟踪号
+     * @param string $orderNumber 查询号码，可输入运单号、订单号、跟踪号
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
@@ -124,6 +124,21 @@ class Client
     {
         $response = $this->factory()
             ->get('WayBill/GetSender?OrderNumber=' . $orderNumber);
+
+        return $this->body($response);
+    }
+
+    /**
+     * 查询运单
+     *
+     * @param string $orderNumber 物流系统运单号，客户订单或跟踪号
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getOrder(string $orderNumber)
+    {
+        $response = $this->factory()
+            ->get('WayBill/GetOrder?OrderNumber=' . $orderNumber);
 
         return $this->body($response);
     }
@@ -140,6 +155,6 @@ class Client
             throw new TokenExpiredException();
         }
 
-        return $data ['Items'] ?? [];
+        return $data['Items'] ?? $data['Item'] ?? [];
     }
 }
