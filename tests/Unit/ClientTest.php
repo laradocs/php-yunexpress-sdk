@@ -1,6 +1,6 @@
 <?php
 
-namespace Laradocs\YunExpress\Tests;
+namespace Laradocs\Tests\Unit;
 
 use GuzzleHttp\Psr7\Response;
 use Laradocs\YunExpress\Client;
@@ -154,53 +154,53 @@ class ClientTest extends TestCase
         $factory = Mockery::mock(Guzzle::class);
         $factory->shouldReceive('get')->withAnyArgs()->andReturnUsing(function ($url) {
             if (str_contains($url, 'GetCountry')) {
-                $body = file_get_contents(__DIR__ . '/get_country.json');
+                $body = file_get_contents(__DIR__ . '/../get_country.json');
             }
             if (str_contains($url, 'GetShippingMethods')) {
-                $body = file_get_contents(__DIR__ . '/get_shipping_methods.json');
+                $body = file_get_contents(__DIR__ . '/../get_shipping_methods.json');
             }
             if (str_contains($url, 'GetGoodsType')) {
-                $body = file_get_contents(__DIR__ . '/get_goods_type.json');
+                $body = file_get_contents(__DIR__ . '/../get_goods_type.json');
             }
             if (str_contains($url, 'GetPriceTrial')) {
-                $body = file_get_contents(__DIR__ . '/get_price_trial.json');
+                $body = file_get_contents(__DIR__ . '/../get_price_trial.json');
             }
             if (str_contains($url, 'GetTrackingNumber')) {
-                $body = file_get_contents(__DIR__ . '/get_tracking_number.json');
+                $body = file_get_contents(__DIR__ . '/../get_tracking_number.json');
             }
             if (str_contains($url, 'GetSender')) {
-                $body = file_get_contents(__DIR__ . '/get_sender.json');
+                $body = file_get_contents(__DIR__ . '/../get_sender.json');
             }
             if (str_contains($url, 'GetOrder')) {
-                $body = file_get_contents(__DIR__ . '/get_order.json');
+                $body = file_get_contents(__DIR__ . '/../get_order.json');
             }
             if (str_contains($url, 'GetShippingFeeDetail')) {
-                $body = file_get_contents(__DIR__ . '/get_shipping_fee_detail.json');
+                $body = file_get_contents(__DIR__ . '/../get_shipping_fee_detail.json');
             }
             if (str_contains($url, 'GetTrackInfo')) {
-                $body = file_get_contents(__DIR__ . '/get_track_info.json');
+                $body = file_get_contents(__DIR__ . '/../get_track_info.json');
             }
             if (str_contains($url, 'GetTrackAllInfo')) {
-                $body = file_get_contents(__DIR__ . '/get_track_all_info.json');
+                $body = file_get_contents(__DIR__ . '/../get_track_all_info.json');
             }
 
             return new Response(200, [], $body);
         });
         $factory->shouldReceive('post')->withAnyArgs()->andReturnUsing(function ($url) {
             if (str_contains($url, 'CreateOrder')) {
-                $body = file_get_contents(__DIR__ . '/create_order.json');
+                $body = file_get_contents(__DIR__ . '/../create_order.json');
             }
             if (str_contains($url, 'UpdateWeight')) {
-                $body = file_get_contents(__DIR__ . '/update_weight.json');
+                $body = file_get_contents(__DIR__ . '/../update_weight.json');
             }
             if (str_contains($url, 'Delete')) {
-                $body = file_get_contents(__DIR__ . '/delete.json');
+                $body = file_get_contents(__DIR__ . '/../delete.json');
             }
             if (str_contains($url, 'Intercept')) {
-                $body = file_get_contents(__DIR__ . '/intercept.json');
+                $body = file_get_contents(__DIR__ . '/../intercept.json');
             }
             if (str_contains($url, 'GetCarrier')) {
-                $body = file_get_contents(__DIR__ . '/get_carrier.json');
+                $body = file_get_contents(__DIR__ . '/../get_carrier.json');
             }
 
             return new Response(200, [], $body);
