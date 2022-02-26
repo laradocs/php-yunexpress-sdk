@@ -1,0 +1,771 @@
+{
+  "Items": [
+    {
+      "Code": "ZDZXR",
+      "CName": "中东专线",
+      "EName": "Middle East Direct",
+      "HasTrackingNumber": true,
+      "DisplayName": "中东专线"
+    },
+    {
+      "Code": "THZXR",
+      "CName": "云途全球专线挂号（特惠带电）",
+      "EName": "YunExpress Registered Standard",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途全球专线挂号（特惠带电）"
+    },
+    {
+      "Code": "CS--",
+      "CName": "测试---",
+      "EName": "CS--",
+      "HasTrackingNumber": true,
+      "DisplayName": "测试---"
+    },
+    {
+      "Code": "PK0052",
+      "CName": "SPMS测试2",
+      "EName": "SPMSTEST2",
+      "HasTrackingNumber": true,
+      "DisplayName": "SPMS测试2"
+    },
+    {
+      "Code": "PK00012",
+      "CName": "测试,忽略",
+      "EName": "测试,忽略",
+      "HasTrackingNumber": true,
+      "DisplayName": "测试,忽略"
+    },
+    {
+      "Code": "BPA",
+      "CName": "云途-B 小包平邮+",
+      "EName": "YunExpress HK bpost",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途-B 小包平邮+"
+    },
+    {
+      "Code": "S0003",
+      "CName": "SPMS测试03",
+      "EName": "SPMSTest03",
+      "HasTrackingNumber": true,
+      "DisplayName": "SPMS测试03"
+    },
+    {
+      "Code": "PK0066",
+      "CName": "测试专线(三)",
+      "EName": "UC-TEST",
+      "HasTrackingNumber": true,
+      "DisplayName": "测试专线(三)"
+    },
+    {
+      "Code": "BKPHR",
+      "CName": "云途全球专线挂号（标快普货）",
+      "EName": "YunExpress Registered Priority General",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途全球专线挂号（标快普货）"
+    },
+    {
+      "Code": "AYPZXR",
+      "CName": "AMZ云途全球专线挂号",
+      "EName": "Amazon Yuntu Global Tracked Line  DDP",
+      "HasTrackingNumber": true,
+      "DisplayName": "AMZ云途全球专线挂号"
+    },
+    {
+      "Code": "HKDHL",
+      "CName": "DHL快递(香港)",
+      "EName": "HongKong DHL Express",
+      "HasTrackingNumber": true,
+      "DisplayName": "DHL快递(香港)"
+    },
+    {
+      "Code": "TKBKZX",
+      "CName": "TK云途全球专线挂号（标快）",
+      "EName": "YunExpress Global Direct Line(Standard)-Tracked",
+      "HasTrackingNumber": true,
+      "DisplayName": "TK云途全球专线挂号（标快）"
+    },
+    {
+      "Code": "TKTHZX",
+      "CName": "TK云途全球专线挂号（特惠带电）",
+      "EName": "YunExpress Global Direct Line with Battery-Untrack",
+      "HasTrackingNumber": true,
+      "DisplayName": "TK云途全球专线挂号（特惠带电）"
+    },
+    {
+      "Code": "TKPHZX",
+      "CName": "TK云途全球专线挂号（特惠普货）",
+      "EName": "YunExpress General Cargo Direct Line non Battery-T",
+      "HasTrackingNumber": true,
+      "DisplayName": "TK云途全球专线挂号（特惠普货）"
+    },
+    {
+      "Code": "AYPZXU",
+      "CName": "AMZ云途全球专线平邮DDP",
+      "EName": "Amazon Yuntu Global Untracked Line DDP",
+      "HasTrackingNumber": true,
+      "DisplayName": "AMZ云途全球专线平邮DDP"
+    },
+    {
+      "Code": "AYUZXR",
+      "CName": "AMZ云途全球普货专线挂号",
+      "EName": "Amazon Yuntu Global Tracked line DDU",
+      "HasTrackingNumber": true,
+      "DisplayName": "AMZ云途全球普货专线挂号"
+    },
+    {
+      "Code": "CNDWA",
+      "CName": "华南快速小包平邮(DG)",
+      "EName": "China Post Unregistered Air Mail-DongGuan",
+      "HasTrackingNumber": true,
+      "DisplayName": "华南快速小包平邮(DG)"
+    },
+    {
+      "Code": "EUB-SZ",
+      "CName": "省内EUB",
+      "EName": "Guangdong EUB",
+      "HasTrackingNumber": true,
+      "DisplayName": "省内EUB"
+    },
+    {
+      "Code": "ZDZXDDP",
+      "CName": "云途亚马逊专线DDP",
+      "EName": "Middle East Registered DDP",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途亚马逊专线DDP"
+    },
+    {
+      "Code": "PK0046",
+      "CName": "渠道一部测试",
+      "EName": "test test",
+      "HasTrackingNumber": true,
+      "DisplayName": "渠道一部测试"
+    },
+    {
+      "Code": "CNDWR",
+      "CName": "华南快速小包挂号(DG)",
+      "EName": "China Post Registered Air Mail-DongGuan",
+      "HasTrackingNumber": true,
+      "DisplayName": "华南快速小包挂号(DG)"
+    },
+    {
+      "Code": "BKZXU",
+      "CName": "云途全球专线平邮（标快）",
+      "EName": "YunExpress Priority Direct",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途全球专线平邮（标快）"
+    },
+    {
+      "Code": "EUFBAVAT",
+      "CName": "中欧FBA空派特惠-VAT",
+      "EName": "Europe FBA VAT",
+      "HasTrackingNumber": true,
+      "DisplayName": "中欧FBA空派特惠-VAT"
+    },
+    {
+      "Code": "EUFBAE",
+      "CName": "中欧FBA空派特惠(普货)",
+      "EName": "Europe FBA General",
+      "HasTrackingNumber": true,
+      "DisplayName": "中欧FBA空派特惠(普货)"
+    },
+    {
+      "Code": "FZZXR",
+      "CName": "云途全球服装专线挂号",
+      "EName": "YunExpress Clothing Registered",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途全球服装专线挂号"
+    },
+    {
+      "Code": "FRZXRT",
+      "CName": "法国专线挂号(退货)",
+      "EName": "YunExpress France Return Line",
+      "HasTrackingNumber": true,
+      "DisplayName": "法国专线挂号(退货)"
+    },
+    {
+      "Code": "EUZXDDP",
+      "CName": "中欧大包裹专线",
+      "EName": "Europe Freight Direct",
+      "HasTrackingNumber": true,
+      "DisplayName": "中欧大包裹专线"
+    },
+    {
+      "Code": "BKZXR",
+      "CName": "云途全球专线挂号（标快）",
+      "EName": "YunExpress Registered Priority",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途全球专线挂号（标快）"
+    },
+    {
+      "Code": "DEZXRT",
+      "CName": "德国专线挂号(退货)",
+      "EName": "YunExpress Germany Return Line",
+      "HasTrackingNumber": true,
+      "DisplayName": "德国专线挂号(退货)"
+    },
+    {
+      "Code": "FBAGBNT",
+      "CName": "英国FBA空派特惠-VAT（可带电）",
+      "EName": "EU-FBA Direct Line(GB VAT-battery)",
+      "HasTrackingNumber": true,
+      "DisplayName": "英国FBA空派特惠-VAT（可带电）"
+    },
+    {
+      "Code": "CAFBA",
+      "CName": "加拿大FBA空派(普货)",
+      "EName": "Canada FBA General",
+      "HasTrackingNumber": true,
+      "DisplayName": "加拿大FBA空派(普货)"
+    },
+    {
+      "Code": "GBZXA",
+      "CName": "测试提交+总包",
+      "EName": "Small Packet of Special Line for England",
+      "HasTrackingNumber": true,
+      "DisplayName": "测试提交+总包"
+    },
+    {
+      "Code": "DEZXRT2",
+      "CName": "德国专线简易挂号",
+      "EName": "YunExpress Germany Registered",
+      "HasTrackingNumber": true,
+      "DisplayName": "德国专线简易挂号"
+    },
+    {
+      "Code": "JMFZZXR",
+      "CName": "Joom邮云途服装专线挂号",
+      "EName": "YunExpress Global Clothes Direct Line-Tracked Serv",
+      "HasTrackingNumber": true,
+      "DisplayName": "Joom邮云途服装专线挂号"
+    },
+    {
+      "Code": "JMPHR",
+      "CName": "Joom邮云途普货专线挂号",
+      "EName": "YunExpress Global Direct Line-Non-battery Tracked",
+      "HasTrackingNumber": true,
+      "DisplayName": "Joom邮云途普货专线挂号"
+    },
+    {
+      "Code": "JMPHP",
+      "CName": "Joom邮云途普货专线平邮",
+      "EName": "YunExpress Global Direct Line-Non-battery Untracke",
+      "HasTrackingNumber": true,
+      "DisplayName": "Joom邮云途普货专线平邮"
+    },
+    {
+      "Code": "JMZXR",
+      "CName": "Joom邮云途专线挂号",
+      "EName": "Joom YunExpress Direct Line",
+      "HasTrackingNumber": true,
+      "DisplayName": "Joom邮云途专线挂号"
+    },
+    {
+      "Code": "JMZXP",
+      "CName": "Joom邮云途专线平邮",
+      "EName": "Joom YunExpress untrack Direct Line",
+      "HasTrackingNumber": true,
+      "DisplayName": "Joom邮云途专线平邮"
+    },
+    {
+      "Code": "KZMPR",
+      "CName": "云途口罩专线挂号",
+      "EName": "YunExpress Mask Registered",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途口罩专线挂号"
+    },
+    {
+      "Code": "THPHR",
+      "CName": "云途全球专线挂号（特惠普货）",
+      "EName": "YunExpress Registered Standard General",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途全球专线挂号（特惠普货）"
+    },
+    {
+      "Code": "THPHU",
+      "CName": "云途全球专线平邮（特惠普货）",
+      "EName": "YunExpress Standard General",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途全球专线平邮（特惠普货）"
+    },
+    {
+      "Code": "THZXU",
+      "CName": "云途全球专线平邮（特惠带电）",
+      "EName": "YunExpress Standard Direct",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途全球专线平邮（特惠带电）"
+    },
+    {
+      "Code": "TPHZXR",
+      "CName": "Tophatter云途专线挂号",
+      "EName": "YunExpress Registered Direct",
+      "HasTrackingNumber": true,
+      "DisplayName": "Tophatter云途专线挂号"
+    },
+    {
+      "Code": "USTHR",
+      "CName": "美国专线挂号（特惠普货）",
+      "EName": "US Standard Registered General",
+      "HasTrackingNumber": true,
+      "DisplayName": "美国专线挂号（特惠普货）"
+    },
+    {
+      "Code": "USZXR",
+      "CName": "中美专线(特惠普货)",
+      "EName": "US Standard General",
+      "HasTrackingNumber": true,
+      "DisplayName": "中美专线(特惠普货)"
+    },
+    {
+      "Code": "USZXRS-S",
+      "CName": "中美专线(专用)",
+      "EName": "US Direct Line(special)",
+      "HasTrackingNumber": true,
+      "DisplayName": "中美专线(专用)"
+    },
+    {
+      "Code": "WISHBKZX",
+      "CName": "wish邮云途标快专线挂号",
+      "EName": "Wish YunExpress Direct Priority Line",
+      "HasTrackingNumber": true,
+      "DisplayName": "wish邮云途标快专线挂号"
+    },
+    {
+      "Code": "WISHBLUE-G",
+      "CName": "Wish Blue云途全球专线挂号",
+      "EName": "Wish Blue Yunexpress Global Economical Line",
+      "HasTrackingNumber": true,
+      "DisplayName": "Wish Blue云途全球专线挂号"
+    },
+    {
+      "Code": "WISHTHZX",
+      "CName": "wish邮云途全球专线挂号",
+      "EName": "Wish Yunexpress Global Economical Line",
+      "HasTrackingNumber": true,
+      "DisplayName": "wish邮云途全球专线挂号"
+    },
+    {
+      "Code": "WISHDER",
+      "CName": "wish邮云途德法专线挂号",
+      "EName": "Wish YunExpress Germany Drict Line",
+      "HasTrackingNumber": true,
+      "DisplayName": "wish邮云途德法专线挂号"
+    },
+    {
+      "Code": "WISHTHZXU",
+      "CName": "wish邮云途全球专线平邮",
+      "EName": "Wish Yunexpress Global Economical Untracked Line",
+      "HasTrackingNumber": true,
+      "DisplayName": "wish邮云途全球专线平邮"
+    },
+    {
+      "Code": "ZXR",
+      "CName": "云途全球专线挂号",
+      "EName": "YunExpress Global Line",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途全球专线挂号"
+    },
+    {
+      "Code": "HXFEDEX-02",
+      "CName": "华西FedEx大货",
+      "EName": "HXFedEx-02",
+      "HasTrackingNumber": true,
+      "DisplayName": "华西FedEx大货"
+    },
+    {
+      "Code": "HXFEDEXPAK",
+      "CName": "华西FedEx-PAK",
+      "EName": "HXFEDEX-PAK",
+      "HasTrackingNumber": true,
+      "DisplayName": "华西FedEx-PAK"
+    },
+    {
+      "Code": "PK0009",
+      "CName": "测试总包",
+      "EName": "CSXB",
+      "HasTrackingNumber": true,
+      "DisplayName": "测试总包"
+    },
+    {
+      "Code": "PK0048",
+      "CName": "华西FEDEX",
+      "EName": "HXFEDEX",
+      "HasTrackingNumber": true,
+      "DisplayName": "华西FEDEX"
+    },
+    {
+      "Code": "UPSSC-A",
+      "CName": "华西UPS经济大货",
+      "EName": "JZUPS",
+      "HasTrackingNumber": true,
+      "DisplayName": "华西UPS经济大货"
+    },
+    {
+      "Code": "UPSQY-A",
+      "CName": "华西UPS大货",
+      "EName": "UPS Worldwide expectied-A",
+      "HasTrackingNumber": true,
+      "DisplayName": "华西UPS大货"
+    },
+    {
+      "Code": "MUZXR",
+      "CName": "云途全球化妆品类专线挂号",
+      "EName": "YunExpress Cosmetics Registered",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途全球化妆品类专线挂号"
+    },
+    {
+      "Code": "PK0053",
+      "CName": "中欧FBA卡车专线-VAT",
+      "EName": "Central Europe FBA Truck Line",
+      "HasTrackingNumber": true,
+      "DisplayName": "中欧FBA卡车专线-VAT"
+    },
+    {
+      "Code": "ZXTSR",
+      "CName": "云途全球专线挂号（特惠带电TS）",
+      "EName": "YunExpress Registered Tax-Refund with battery",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途全球专线挂号（特惠带电TS）"
+    },
+    {
+      "Code": "SPTHZX",
+      "CName": "SP云途全球专线挂号（特惠带电）",
+      "EName": "Shopee YunExpress Global Direct Line",
+      "HasTrackingNumber": true,
+      "DisplayName": "SP云途全球专线挂号（特惠带电）"
+    },
+    {
+      "Code": "SPPHZX",
+      "CName": "SP云途全球专线挂号（特惠普货）",
+      "EName": "Shopee YunExpress Global Direct-Non-battery",
+      "HasTrackingNumber": true,
+      "DisplayName": "SP云途全球专线挂号（特惠普货）"
+    },
+    {
+      "Code": "FBAUSSEA-F",
+      "CName": "美国FBA海派快船",
+      "EName": "US-FBA Direct Priority Line(Shipping by fast sea)",
+      "HasTrackingNumber": true,
+      "DisplayName": "美国FBA海派快船"
+    },
+    {
+      "Code": "UPSCN-B",
+      "CName": "大陆UPS大货价",
+      "EName": "China UPS express",
+      "HasTrackingNumber": true,
+      "DisplayName": "大陆UPS大货价"
+    },
+    {
+      "Code": "EUFBAEL",
+      "CName": "中欧FBA空派特惠(带电)",
+      "EName": "EU-FBA Direct Line(battery accepted)",
+      "HasTrackingNumber": true,
+      "DisplayName": "中欧FBA空派特惠(带电)"
+    },
+    {
+      "Code": "SZEMS",
+      "CName": "省内EMS",
+      "EName": "China Post EMS-SN",
+      "HasTrackingNumber": true,
+      "DisplayName": "省内EMS"
+    },
+    {
+      "Code": "TDZXR",
+      "CName": "云途全球精选专线挂号（特惠带电）",
+      "EName": "Yunexpress Driect Economical Line",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途全球精选专线挂号（特惠带电）"
+    },
+    {
+      "Code": "TDPHR",
+      "CName": "云途全球精选专线挂号（特惠普货）",
+      "EName": "Yunexpress Driect Economical Line（general）",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途全球精选专线挂号（特惠普货）"
+    },
+    {
+      "Code": "PK0054",
+      "CName": "中欧FBA卡车专线(双清)",
+      "EName": "Central Europe FBA Truck Line(include VAT)",
+      "HasTrackingNumber": true,
+      "DisplayName": "中欧FBA卡车专线(双清)"
+    },
+    {
+      "Code": "CCFUR",
+      "CName": "仓储额外服务产品",
+      "EName": "Additional service product",
+      "HasTrackingNumber": true,
+      "DisplayName": "仓储额外服务产品"
+    },
+    {
+      "Code": "USFBABK",
+      "CName": "中美FBA空派标快",
+      "EName": "US-FBA Standard Express (Double Clearance Includin",
+      "HasTrackingNumber": true,
+      "DisplayName": "中美FBA空派标快"
+    },
+    {
+      "Code": "USFBA",
+      "CName": "中美FBA空派特惠",
+      "EName": "US-FBA (Double Clearance)",
+      "HasTrackingNumber": true,
+      "DisplayName": "中美FBA空派特惠"
+    },
+    {
+      "Code": "EUFBABK",
+      "CName": "中欧FBA空派标快-VAT",
+      "EName": "CEIBS FBA Standard Express-VAT",
+      "HasTrackingNumber": true,
+      "DisplayName": "中欧FBA空派标快-VAT"
+    },
+    {
+      "Code": "GBFBABK",
+      "CName": "英国FBA空派标快-VAT",
+      "EName": "British FBA Standard Express-VAT",
+      "HasTrackingNumber": true,
+      "DisplayName": "英国FBA空派标快-VAT"
+    },
+    {
+      "Code": "EUFBAEK",
+      "CName": "中欧FBA空派标快(普货)",
+      "EName": "EU-FBA Direct Line K",
+      "HasTrackingNumber": true,
+      "DisplayName": "中欧FBA空派标快(普货)"
+    },
+    {
+      "Code": "EUFBAELK",
+      "CName": "中欧FBA空派标快(带电)",
+      "EName": "EU-FBA Direct Line K (battery accepted)",
+      "HasTrackingNumber": true,
+      "DisplayName": "中欧FBA空派标快(带电)"
+    },
+    {
+      "Code": "FBAUSSEA-K",
+      "CName": "美国FBA美森海卡正班",
+      "EName": "USSEA-HK",
+      "HasTrackingNumber": true,
+      "DisplayName": "美国FBA美森海卡正班"
+    },
+    {
+      "Code": "USZXMP",
+      "CName": "中美专线（快线）",
+      "EName": "Fast Line for US",
+      "HasTrackingNumber": true,
+      "DisplayName": "中美专线（快线）"
+    },
+    {
+      "Code": "HXFEDEX-1",
+      "CName": "华西FedEx-精选",
+      "EName": "HXFEDEX-1",
+      "HasTrackingNumber": true,
+      "DisplayName": "华西FedEx-精选"
+    },
+    {
+      "Code": "HKCS",
+      "CName": "香港公司产品--测试请勿下单",
+      "EName": "HKPCS",
+      "HasTrackingNumber": true,
+      "DisplayName": "香港公司产品--测试请勿下单"
+    },
+    {
+      "Code": "TKMUZX",
+      "CName": "TK云途全球化妆品类专线挂号",
+      "EName": "TKYunExpress Global Tracked Direct Line for makeup",
+      "HasTrackingNumber": true,
+      "DisplayName": "TK云途全球化妆品类专线挂号"
+    },
+    {
+      "Code": "TKBKPH",
+      "CName": "TK云途全球专线挂号（标快普货）",
+      "EName": "TKYunExpress Global Direct Line（general）",
+      "HasTrackingNumber": true,
+      "DisplayName": "TK云途全球专线挂号（标快普货）"
+    },
+    {
+      "Code": "TESTEUFBA",
+      "CName": "测试FBA",
+      "EName": "FBAtest",
+      "HasTrackingNumber": true,
+      "DisplayName": "测试FBA"
+    },
+    {
+      "Code": "PPBKPHR",
+      "CName": "PP云途全球专线挂号(标快普货)",
+      "EName": "PP-YunExpress Global Direct Line（general）",
+      "HasTrackingNumber": true,
+      "DisplayName": "PP云途全球专线挂号(标快普货)"
+    },
+    {
+      "Code": "EUFBAVAT-E",
+      "CName": "中欧FBA空派特惠带电-VAT",
+      "EName": "Europe FBA VAT Charged",
+      "HasTrackingNumber": true,
+      "DisplayName": "中欧FBA空派特惠带电-VAT"
+    },
+    {
+      "Code": "USPSBKPHR",
+      "CName": "美国USPS快速专线(标快普货)",
+      "EName": "US USPS Fast Line (General)",
+      "HasTrackingNumber": true,
+      "DisplayName": "美国USPS快速专线(标快普货)"
+    },
+    {
+      "Code": "NC-EUB",
+      "CName": "南昌EUB",
+      "EName": "Nanchang EUB",
+      "HasTrackingNumber": true,
+      "DisplayName": "南昌EUB"
+    },
+    {
+      "Code": "SNETK",
+      "CName": "省内E特快",
+      "EName": "China Post  Ems-SN",
+      "HasTrackingNumber": true,
+      "DisplayName": "省内E特快"
+    },
+    {
+      "Code": "CHZXDDP",
+      "CName": "瑞士专线挂号DDP",
+      "EName": "CHZXDDP",
+      "HasTrackingNumber": true,
+      "DisplayName": "瑞士专线挂号DDP"
+    },
+    {
+      "Code": "HKPOST",
+      "CName": "香港邮政挂号",
+      "EName": "Hongkong Post",
+      "HasTrackingNumber": true,
+      "DisplayName": "香港邮政挂号"
+    },
+    {
+      "Code": "TKBKZXU",
+      "CName": "TK云途全球专线平邮（标快）",
+      "EName": "TK YunExpress Priority Direct",
+      "HasTrackingNumber": true,
+      "DisplayName": "TK云途全球专线平邮（标快）"
+    },
+    {
+      "Code": "TKTHZXU",
+      "CName": "TK云途全球专线平邮（特惠带电）",
+      "EName": "TK YunExpress Standard Direct",
+      "HasTrackingNumber": true,
+      "DisplayName": "TK云途全球专线平邮（特惠带电）"
+    },
+    {
+      "Code": "TKTHPHU",
+      "CName": "TK云途全球专线平邮（特惠普货）",
+      "EName": "TK YunExpress Standard General",
+      "HasTrackingNumber": true,
+      "DisplayName": "TK云途全球专线平邮（特惠普货）"
+    },
+    {
+      "Code": "USZXRS-NJ",
+      "CName": "财务其他用途",
+      "EName": "Fast and Special Service",
+      "HasTrackingNumber": true,
+      "DisplayName": "财务其他用途"
+    },
+    {
+      "Code": "CS-US",
+      "CName": "美国测试",
+      "EName": "CS-US",
+      "HasTrackingNumber": true,
+      "DisplayName": "美国测试"
+    },
+    {
+      "Code": "USZXRS-2",
+      "CName": "中美专线(自发头程)",
+      "EName": "YunExpress US Direct Service Line",
+      "HasTrackingNumber": true,
+      "DisplayName": "中美专线(自发头程)"
+    },
+    {
+      "Code": "PK0019",
+      "CName": "测试渠道三",
+      "EName": "ceshisanchan",
+      "HasTrackingNumber": true,
+      "DisplayName": "测试渠道三"
+    },
+    {
+      "Code": "TESTHKP",
+      "CName": "测试-香港产品",
+      "EName": "TESTING-Hongkong",
+      "HasTrackingNumber": true,
+      "DisplayName": "测试-香港产品"
+    },
+    {
+      "Code": "FBAUSSEA-T",
+      "CName": "美国FBA美森海卡统配",
+      "EName": "FBAUSSEA-T",
+      "HasTrackingNumber": true,
+      "DisplayName": "美国FBA美森海卡统配"
+    },
+    {
+      "Code": "SIBKPHR",
+      "CName": "SI云途全球专线挂号（标快普货）",
+      "EName": "SIYunExpress Global Direct Line（General）",
+      "HasTrackingNumber": true,
+      "DisplayName": "SI云途全球专线挂号（标快普货）"
+    },
+    {
+      "Code": "CAZX",
+      "CName": "加拿大专线挂号",
+      "EName": "Canada special line registration",
+      "HasTrackingNumber": true,
+      "DisplayName": "加拿大专线挂号"
+    },
+    {
+      "Code": "CPA",
+      "CName": "测试渠道二",
+      "EName": "ceshiyichan",
+      "HasTrackingNumber": true,
+      "DisplayName": "测试渠道二"
+    },
+    {
+      "Code": "456",
+      "CName": "测试哈哈哈",
+      "EName": "测试哈哈",
+      "HasTrackingNumber": true,
+      "DisplayName": "测试哈哈哈"
+    },
+    {
+      "Code": "NKJN",
+      "CName": "测试5",
+      "EName": "TEST01",
+      "HasTrackingNumber": true,
+      "DisplayName": "测试5"
+    },
+    {
+      "Code": "PK0027",
+      "CName": "测试一",
+      "EName": "fsdfds",
+      "HasTrackingNumber": true,
+      "DisplayName": "测试一"
+    },
+    {
+      "Code": "ZXTSPHR",
+      "CName": "云途全球专线挂号（特惠普货TS）",
+      "EName": "YunExpress Registered Tax-Refund no battery",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途全球专线挂号（特惠普货TS）"
+    },
+    {
+      "Code": "ceshi0001",
+      "CName": "测试0001",
+      "EName": "ceshi0001",
+      "HasTrackingNumber": true,
+      "DisplayName": "测试0001"
+    },
+    {
+      "Code": "EMPHR",
+      "CName": "云途全球专线挂号（经济普货）",
+      "EName": "YunExpress Registered Economy General",
+      "HasTrackingNumber": true,
+      "DisplayName": "云途全球专线挂号（经济普货）"
+    }
+  ],
+  "Code": "0000",
+  "Message": "提交成功!",
+  "RequestId": "0HMFNAS02S3A5:00000002",
+  "TimeStamp": "2022-02-26T03:31:42.4017523+00:00"
+}

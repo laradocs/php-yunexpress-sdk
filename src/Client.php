@@ -2,6 +2,7 @@
 
 namespace Laradocs\YunExpress;
 
+use GuzzleHttp\Psr7\Response;
 use JsonException;
 use GuzzleHttp\Client as Guzzle;
 use Laradocs\YunExpress\Exceptions\TokenExpiredException;
@@ -34,10 +35,10 @@ class Client
     /**
      * 查询国家简码
      *
-     * @return mixed
+     * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getCountry()
+    public function getCountry(): array
     {
         $response = $this->factory()
             ->get('Common/GetCountry');
@@ -45,7 +46,25 @@ class Client
         return $this->body($response);
     }
 
-    protected function body($response)
+    /**
+     * 查询运输方式
+     *
+     * @param string|null $country
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getShippingMethods(?string $countryCode = null): array
+    {
+        if (is_null($countryCode)) {
+            $countryCode = '?CountryCode=' . $countryCode;
+        }
+        $response = $this->factory()
+            ->get('Common/GetShippingMethods' . $countryCode);
+
+        return $this->body($response);
+    }
+
+    protected function body(Response $response): array
     {
         $body = $response->getBody();
         try {
@@ -53,10 +72,10 @@ class Client
         } catch (JsonException $e) {
             throw new TokenExpiredException();
         }
-        if ( $data['Code'] !== '0000' ) {
+        if ($data['Code'] !== '0000') {
             throw new TokenExpiredException();
         }
 
-        return $data [ 'Items' ];
+        return $data ['Items'] ?? [];
     }
 }
