@@ -51,6 +51,15 @@ class ClientTest extends TestCase
         $this->assertSame([], $data);
     }
 
+    public function testGetTrackingNumber()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->getTrackingNumber('xxx');
+        $this->assertNotEmpty($data);
+        $this->assertSame(2, $data[0]['Status']);
+    }
+
     protected function factory()
     {
         $factory = Mockery::mock(Guzzle::class);
@@ -66,6 +75,9 @@ class ClientTest extends TestCase
             }
             if (str_contains($url, 'GetPriceTrial')) {
                 $body = file_get_contents(__DIR__ . '/get_price_trial.json');
+            }
+            if (str_contains($url, 'GetTrackingNumber')) {
+                $body = file_get_contents(__DIR__ . '/get_tracking_number.json');
             }
 
             return new Response(200, [], $body);

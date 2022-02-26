@@ -1,0 +1,26 @@
+{
+  "Items": [
+    {
+      "OrderNumber": "udwrxxxxx-xxx-xxxxxxx-xxxxxxx",
+      "CustomerOrderNumber": "udwrxxxxx-xxx-xxxxxxx-xxxxxxx",
+      "TrackingNumber": null,
+      "WayBillNumber": "YT1111111111111111",
+      "ChildTrackings": [],
+      "Remark": "",
+      "Status": 2
+    },
+    {
+      "OrderNumber": "qvvrxxxxx-xxx-xxxxxxx-xxxxxxx",
+      "CustomerOrderNumber": "qvvrxxxxx-xxx-xxxxxxx-xxxxxxx",
+      "TrackingNumber": null,
+      "WayBillNumber": "YT2222222222222222",
+      "ChildTrackings": [],
+      "Remark": "",
+      "Status": 2
+    }
+  ],
+  "Code": "0000",
+  "Message": "提交成功!",
+  "RequestId": "0HMFNARUPQ88A:00000002",
+  "TimeStamp": "2022-02-26T06:38:14.6729061+00:00"
+}
