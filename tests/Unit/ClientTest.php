@@ -113,6 +113,15 @@ class ClientTest extends TestCase
         $this->assertSame('2022021008567562', $data['OrderNumber']);
     }
 
+    public function testLabelPrint()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->labelPrint(['2022021008567562']);
+        $this->assertNotEmpty($data);
+        $this->assertSame(100, $data[0]['OrderInfos'][0]['Code']);
+    }
+
     public function testGetShippingFeeDetail()
     {
         $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
@@ -198,6 +207,9 @@ class ClientTest extends TestCase
             }
             if (str_contains($url, 'Intercept')) {
                 $body = file_get_contents(__DIR__ . '/../intercept.json');
+            }
+            if (str_contains($url, 'Label/Print')) {
+                $body = file_get_contents(__DIR__ . '/../label_print.json');
             }
             if (str_contains($url, 'GetCarrier')) {
                 $body = file_get_contents(__DIR__ . '/../get_carrier.json');

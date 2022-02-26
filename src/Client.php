@@ -246,11 +246,28 @@ class Client
     public function intercept(int $orderType, string $orderNumber, string $remark): array
     {
         $response = $this->factory()
-            ->post ( 'WayBill/Intercept', [
+            ->post('WayBill/Intercept', [
                 'OrderType' => $orderType,
                 'OrderNumber' => $orderNumber,
                 'Remark' => $remark,
-            ] );
+            ]);
+
+        return $this->body($response);
+    }
+
+    /**
+     * 标签打印
+     *
+     * @param array $orderNumbers 物流系统运单号，客户订单或跟踪号
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function labelPrint(array $orderNumbers): array
+    {
+        $response = $this->factory()
+            ->post('Label/Print', [
+                'json' => $orderNumbers,
+            ]);
 
         return $this->body($response);
     }

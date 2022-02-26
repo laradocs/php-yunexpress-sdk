@@ -1,0 +1,18 @@
+{
+  "Item": [
+    {
+      "Url": "http://f0.yunexpress.com:81/PDF/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.pdf",
+      "OrderInfos": [
+        {
+          "CustomerOrderNumber": "YT2222222222222222",
+          "Error": "",
+          "Code": 100
+        }
+      ]
+    }
+  ],
+  "Code": "0000",
+  "Message": "提交成功",
+  "RequestId": "7316aa4065d54a359b14075dae0427f3",
+  "TimeStamp": "2022-02-26T11:52:07.2506376+00:00"
+}
