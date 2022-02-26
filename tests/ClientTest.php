@@ -61,11 +61,11 @@ class ClientTest extends TestCase
 
     public function testGetSender()
     {
-        $factory = Mockery::mock ( Client::class . '[factory]', [ 'xxx' ] );
-        $factory->shouldReceive ( 'factory' )->andReturn ( $this->factory() );
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
         $data = $factory->getSender('xxx');
-        $this->assertNotEmpty ( $data );
-        $this->assertSame ( 'CN', $data['CountryCode']);
+        $this->assertNotEmpty($data);
+        $this->assertSame('CN', $data['CountryCode']);
     }
 
     protected function factory()
@@ -87,8 +87,8 @@ class ClientTest extends TestCase
             if (str_contains($url, 'GetTrackingNumber')) {
                 $body = file_get_contents(__DIR__ . '/get_tracking_number.json');
             }
-            if ( str_contains ( $url, 'GetSender' ) ) {
-                $body = file_get_contents ( __DIR__ . '/get_sender.json' );
+            if (str_contains($url, 'GetSender')) {
+                $body = file_get_contents(__DIR__ . '/get_sender.json');
             }
 
             return new Response(200, [], $body);
