@@ -1,0 +1,11 @@
+{
+  "Item": {
+    "CustomerCode": "C12345",
+    "AccountID": "tongtu011",
+    "ApiSecret": "xxxxxxxxx="
+  },
+  "Code": "0000",
+  "Message": "提交成功",
+  "RequestId": "a0ae1d861f9541d8a66312945fd7dc6d",
+  "Timestamp": "2019-03-07T09:54:09.7221676+00:00"
+}

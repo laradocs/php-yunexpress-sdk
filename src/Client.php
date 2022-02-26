@@ -288,6 +288,41 @@ class Client
     }
 
     /**
+     * 用户注册
+     *
+     * @param string $username 用户名
+     * @param string $password 密码
+     * @param string $contact 联系人
+     * @param string $mobile 联系人电话
+     * @param string $telephone 联系人电话
+     * @param string $name 客户名称/公司名称
+     * @param string $email 邮箱
+     * @param string $address 详细地址
+     * @param int $platForm 平台 ID(通途平台--2)
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function register(string $username, string $password, string $contact, string $mobile, string $telephone, string $name, string $email, string $address, int $platForm)
+    {
+        $response = $this->factory()
+            ->post('Common/Register', [
+                'json' => [
+                    'UserName' => $username,
+                    'PassWord' => $password,
+                    'Contact' => $contact,
+                    'Mobile' => $mobile,
+                    'Telephone' => $telephone,
+                    'Name' => $name,
+                    'Email' => $email,
+                    'Address' => $address,
+                    'PlatForm' => $platForm,
+                ]
+            ]);
+
+        return $this->body($response);
+    }
+
+    /**
      * 查询物流轨迹信息
      * 根据轨迹订阅查询轨迹
      *
