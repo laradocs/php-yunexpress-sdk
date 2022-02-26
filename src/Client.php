@@ -9,7 +9,7 @@ use Laradocs\YunExpress\Exceptions\TokenExpiredException;
 
 class Client
 {
-    protected $baseUri = 'http://oms.api.yunexpress.com/api';
+    protected $baseUri = 'http://oms.api.yunexpress.com/api/';
 
     protected $token;
 
@@ -83,10 +83,12 @@ class Client
      *
      * @param string $countryCode
      * @param float $weight
+     * @param int $packageType
      * @param int|null $length
      * @param int|null $width
      * @param int|null $height
-     * @return void
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getPriceTrial(string $countryCode, float $weight, int $packageType = 1, ?int $length = null, ?int $width = null, ?int $height = null)
     {
