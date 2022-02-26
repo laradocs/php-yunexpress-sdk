@@ -1,0 +1,19 @@
+{
+  "Items": {
+    "OrderNumber": "YT2222222222222222",
+    "WayBillNumber": "YT2222222222222222",
+    "CountryCode": "CN",
+    "FirstName": "xxx",
+    "LastName": "",
+    "Company": "",
+    "Address": "xxx  xxxxxxxx",
+    "City": "xx",
+    "State": "xx",
+    "Zip": "000000",
+    "Phone": "13888888888"
+  },
+  "Code": "0000",
+  "Message": "提交成功!",
+  "RequestId": "0HMFNAS03BV4Q:00000002",
+  "TimeStamp": "2022-02-26T06:59:46.8112314+00:00"
+}

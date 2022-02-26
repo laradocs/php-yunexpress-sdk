@@ -1,0 +1,28 @@
+{
+  "Items": [
+    {
+      "Id": 2,
+      "CName": "文件",
+      "EName": "Document"
+    },
+    {
+      "Id": 4,
+      "CName": "分单",
+      "EName": "FD"
+    },
+    {
+      "Id": 3,
+      "CName": "信封",
+      "EName": "Later"
+    },
+    {
+      "Id": 1,
+      "CName": "包裹",
+      "EName": "WPX"
+    }
+  ],
+  "Code": "0000",
+  "Message": "提交成功!",
+  "RequestId": "0HMFNARVRCF9Q:00000002",
+  "TimeStamp": "2022-02-26T03:38:50.8625725+00:00"
+}

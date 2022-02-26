@@ -24,12 +24,95 @@ class ClientTest extends TestCase
         $this->assertSame('AD', $data[0]['CountryCode']);
     }
 
+    public function testGetShippingMethods()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->getShippingMethods();
+        $this->assertNotEmpty($data);
+        $this->assertSame('ZDZXR', $data[0]['Code']);
+    }
+
+    public function testGetGoodsType()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->getGoodsType();
+        $this->assertNotEmpty($data);
+        $this->assertSame(2, $data[0]['Id']);
+    }
+
+    public function testGetPriceTrial()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->getPriceTrial('US', 0.2);
+        $this->assertEmpty($data);
+    }
+
+    public function testGetTrackingNumber()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->getTrackingNumber('xxx');
+        $this->assertNotEmpty($data);
+        $this->assertSame(2, $data[0]['Status']);
+    }
+
+    public function testGetSender()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->getSender('xxx');
+        $this->assertNotEmpty($data);
+        $this->assertSame('CN', $data['CountryCode']);
+    }
+
+    public function testGetOrder()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->getOrder('xxx');
+        $this->assertNotEmpty($data);
+        $this->assertSame('BKPHR', $data['ShippingMethodCode']);
+    }
+
+    public function testGetShippingFeeDetail()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->getShippingFeeDetail('xxx');
+        $this->assertNotEmpty($data);
+        $this->assertSame('US', $data['CountryCode']);
+    }
+
     protected function factory()
     {
         $factory = Mockery::mock(Guzzle::class);
         $factory->shouldReceive('get')->withAnyArgs()->andReturnUsing(function ($url) {
             if (str_contains($url, 'GetCountry')) {
                 $body = file_get_contents(__DIR__ . '/get_country.json');
+            }
+            if (str_contains($url, 'GetShippingMethods')) {
+                $body = file_get_contents(__DIR__ . '/get_shipping_methods.json');
+            }
+            if (str_contains($url, 'GetGoodsType')) {
+                $body = file_get_contents(__DIR__ . '/get_goods_type.json');
+            }
+            if (str_contains($url, 'GetPriceTrial')) {
+                $body = file_get_contents(__DIR__ . '/get_price_trial.json');
+            }
+            if (str_contains($url, 'GetTrackingNumber')) {
+                $body = file_get_contents(__DIR__ . '/get_tracking_number.json');
+            }
+            if (str_contains($url, 'GetSender')) {
+                $body = file_get_contents(__DIR__ . '/get_sender.json');
+            }
+            if (str_contains($url, 'GetOrder')) {
+                $body = file_get_contents(__DIR__ . '/get_order.json');
+            }
+            if (str_contains($url, 'GetShippingFeeDetail')) {
+                $body = file_get_contents(__DIR__ . '/get_shipping_fee_detail.json');
             }
 
             return new Response(200, [], $body);
