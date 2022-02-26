@@ -86,6 +86,24 @@ class ClientTest extends TestCase
         $this->assertSame('US', $data['CountryCode']);
     }
 
+    public function testGetTrackInfo()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->getTrackInfo('xxx');
+        $this->assertNotEmpty($data);
+        $this->assertSame('AU', $data['CountryCode']);
+    }
+
+    public function testGetTrackAllInfo()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->getTrackAllInfo('xxx');
+        $this->assertNotEmpty($data);
+        $this->assertSame('AU', $data['CountryCode']);
+    }
+
     protected function factory()
     {
         $factory = Mockery::mock(Guzzle::class);
@@ -113,6 +131,12 @@ class ClientTest extends TestCase
             }
             if (str_contains($url, 'GetShippingFeeDetail')) {
                 $body = file_get_contents(__DIR__ . '/get_shipping_fee_detail.json');
+            }
+            if (str_contains($url, 'GetTrackInfo')) {
+                $body = file_get_contents(__DIR__ . '/get_track_info.json');
+            }
+            if (str_contains($url, 'GetTrackAllInfo')) {
+                $body = file_get_contents(__DIR__ . '/get_track_all_info.json');
             }
 
             return new Response(200, [], $body);

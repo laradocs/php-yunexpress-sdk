@@ -159,6 +159,38 @@ class Client
         return $this->body($response);
     }
 
+    /**
+     * 查询物流轨迹信息
+     * 根据轨迹订阅查询轨迹
+     *
+     * @param string $orderNumber 物流系统运单号，客户订单或跟踪号
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getTrackInfo(string $orderNumber)
+    {
+        $response = $this->factory()
+            ->get('Tracking/GetTrackInfo?OrderNumber=' . $orderNumber);
+
+        return $this->body($response);
+    }
+
+    /**
+     * 查询物流轨迹信息
+     * 查询全程轨迹
+     *
+     * @param string $orderNumber 物流系统运单号，客户订单或跟踪号
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getTrackAllInfo(string $orderNumber)
+    {
+        $response = $this->factory()
+            ->get('Tracking/GetTrackAllInfo?OrderNumber=' . $orderNumber);
+
+        return $this->body($response);
+    }
+
     protected function body(Response $response): array
     {
         $body = $response->getBody();
@@ -168,7 +200,7 @@ class Client
             throw new TokenExpiredException();
         }
         if ($data['Code'] !== '0000') {
-            if ( $data['Code'] !== '401' ) {
+            if ($data['Code'] !== '401') {
                 throw new ParamInvalidException($data['Message']);
             }
             throw new TokenExpiredException($data['Message']);
