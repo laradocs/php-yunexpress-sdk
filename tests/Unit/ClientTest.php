@@ -167,6 +167,15 @@ class ClientTest extends TestCase
         $this->assertSame('CAZX', $data[0]['CarrierCode']);
     }
 
+    public function testRegisterIoss()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->registerIoss(0, null, 'xxx');
+        $this->assertNotEmpty($data);
+        $this->assertSame('0000', $data['Code']);
+    }
+
     protected function factory()
     {
         $factory = Mockery::mock(Guzzle::class);
@@ -225,6 +234,9 @@ class ClientTest extends TestCase
             }
             if (str_contains($url, 'GetCarrier')) {
                 $body = file_get_contents(__DIR__ . '/../get_carrier.json');
+            }
+            if (str_contains($url, 'RegisterIoss')) {
+                $body = file_get_contents(__DIR__ . '/../register_ioss.json');
             }
 
             return new Response(200, [], $body);

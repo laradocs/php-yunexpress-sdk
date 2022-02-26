@@ -371,6 +371,77 @@ class Client
         return $this->body($response);
     }
 
+    /**
+     * IOSS号备案
+     *
+     * @param int $iossType 0-个人 1-平台
+     * @param string|null $platformName 平台名称，类型为 1 时需提供
+     * @param string $iossNumber 2位字母加10位数字，reg: ^[a-zA-Z]{2}[0- 9]{10}$
+     * @param string|null $company IOSS号注册公司名称
+     * @param string|null $country 2位国家简码
+     * @param string|null $street IOSS号街道地址
+     * @param string|null $city IOSS号所在城市
+     * @param string|null $province IOSS号所在省/州
+     * @param string|null $postalCode IOSS号邮编
+     * @param string|null $mobilePhone IOSS号手机号
+     * @param string|null $email IOSS号电子邮箱
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function registerIoss(int $iossType, ?string $platformName, string $iossNumber, ?string $company = null, ?string $country = null, ?string $street = null, ?string $city = null, ?string $province = null, ?string $postalCode = null, ?string $mobilePhone = null, ?string $email = null): array
+    {
+        $attributes = [];
+        if (!is_null($platformName)) {
+            $attributes['PlatformName'] = $platformName;
+        }
+        if (!is_null($company)) {
+            $attributes['Company'] = $platformName;
+        }
+        if (!is_null($country)) {
+            $attributes['Country'] = $country;
+        }
+        if (!is_null($street)) {
+            $attributes['Street'] = $street;
+        }
+        if (!is_null($city)) {
+            $attributes['City'] = $city;
+        }
+        if (!is_null($province)) {
+            $attributes['Province'] = $province;
+        }
+        if (!is_null($postalCode)) {
+            $attributes['PostalCode'] = $postalCode;
+        }
+        if (!is_null($mobilePhone)) {
+            $attributes['MobilePhone'] = $mobilePhone;
+        }
+        if (is_null($email)) {
+            $attributes['Email'] = $email;
+        }
+        $response = $this->factory()
+            ->post('WayBill/RegisterIoss', [
+                'json' => [
+                    'IossType' => $iossType,
+                    'IossNumber' => $iossNumber,
+                    $attributes,
+                ]
+            ]);
+        $body = $response->getBody();
+        try {
+            $data = json_decode($body, true, 512, JSON_THROW_ON_ERROR);
+        } catch (JsonException $e) {
+            throw new TokenExpiredException();
+        }
+        if ($data['Code'] !== '0000') {
+            if ($data['Code'] !== '401') {
+                throw new ParamInvalidException($data['Message']);
+            }
+            throw new TokenExpiredException($data['Message']);
+        }
+
+        return $data ?? [];
+    }
+
     protected function body(Response $response): array
     {
         $body = $response->getBody();
