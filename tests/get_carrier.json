@@ -1,0 +1,26 @@
+{
+  "Item": [
+    {
+      "OrderCode": "YT2222222222222222",
+      "OrderCodeType": "Y",
+      "CarrierCode": "CAZX",
+      "CarrierCName": "CAZX-加拿大邮政",
+      "CarrierEName": "CAZX Canada postal",
+      "CarrierPhone": "",
+      "CarrierWebsite": ""
+    },
+    {
+      "OrderCode": "YT2222222222222222",
+      "OrderCodeType": "Y",
+      "CarrierCode": "CAZX",
+      "CarrierCName": "CAZX-加拿大邮政",
+      "CarrierEName": "CAZX Canada postal",
+      "CarrierPhone": "",
+      "CarrierWebsite": ""
+    }
+  ],
+  "Code": "0000",
+  "Message": "提交成功!",
+  "RequestId": "0HMFNAS03Q587:00000002",
+  "TimeStamp": "2022-02-26T09:57:27.5793432+00:00"
+}

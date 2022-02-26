@@ -104,6 +104,15 @@ class ClientTest extends TestCase
         $this->assertSame('AU', $data['CountryCode']);
     }
 
+    public function testGetCarrier()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->getCarrier(['xxx']);
+        $this->assertNotEmpty($data);
+        $this->assertSame('CAZX', $data[0]['CarrierCode']);
+    }
+
     protected function factory()
     {
         $factory = Mockery::mock(Guzzle::class);
@@ -137,6 +146,13 @@ class ClientTest extends TestCase
             }
             if (str_contains($url, 'GetTrackAllInfo')) {
                 $body = file_get_contents(__DIR__ . '/get_track_all_info.json');
+            }
+
+            return new Response(200, [], $body);
+        });
+        $factory->shouldReceive('post')->withAnyArgs()->andReturnUsing(function ($url) {
+            if (str_contains($url, 'GetCarrier')) {
+                $body = file_get_contents(__DIR__ . '/get_carrier.json');
             }
 
             return new Response(200, [], $body);

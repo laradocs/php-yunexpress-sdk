@@ -167,7 +167,7 @@ class Client
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getTrackInfo(string $orderNumber)
+    public function getTrackInfo(string $orderNumber): array
     {
         $response = $this->factory()
             ->get('Tracking/GetTrackInfo?OrderNumber=' . $orderNumber);
@@ -183,10 +183,27 @@ class Client
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getTrackAllInfo(string $orderNumber)
+    public function getTrackAllInfo(string $orderNumber): array
     {
         $response = $this->factory()
             ->get('Tracking/GetTrackAllInfo?OrderNumber=' . $orderNumber);
+
+        return $this->body($response);
+    }
+
+    /**
+     * 查询末端派送商
+     *
+     * @param array $orderNumbers 查询号码，可输入运单号、订单号、跟踪号
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getCarrier(array $orderNumbers): array
+    {
+        $response = $this->factory()
+            ->post('Waybill/GetCarrier', [
+                'json' => $orderNumbers,
+            ]);
 
         return $this->body($response);
     }
