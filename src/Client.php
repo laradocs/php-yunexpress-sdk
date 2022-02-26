@@ -73,7 +73,34 @@ class Client
     public function getGoodsType()
     {
         $response = $this->factory()
-            ->get ( 'Common/GetGoodsType' );
+            ->get('Common/GetGoodsType');
+
+        return $this->body($response);
+    }
+
+    /**
+     * 查询价格
+     *
+     * @param string $countryCode
+     * @param float $weight
+     * @param int|null $length
+     * @param int|null $width
+     * @param int|null $height
+     * @return void
+     */
+    public function getPriceTrial(string $countryCode, float $weight, int $packageType = 1, ?int $length = null, ?int $width = null, ?int $height = null)
+    {
+        if (!is_null($length)) {
+            $length = '&Length=' . $length;
+        }
+        if (!is_null($width)) {
+            $width = '&Width=' . $width;
+        }
+        if (!is_null($height)) {
+            $height = '&Height=' . $height;
+        }
+        $response = $this->factory()
+            ->get("Freight/GetPriceTrial?CountryCode={$countryCode}&Weight={$weight}&packageType={$packageType}{$length}{$width}{$height}");
 
         return $this->body($response);
     }

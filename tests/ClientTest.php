@@ -42,6 +42,15 @@ class ClientTest extends TestCase
         $this->assertSame(2, $data[0]['Id']);
     }
 
+    public function testGetPriceTrial()
+    {
+        $factory = Mockery::mock ( Client::class . '[factory]', [ 'xxx' ] );
+        $factory->shouldReceive ( 'factory' )->andReturn ( $this->factory() );
+        $data = $factory->getPriceTrial('US', 0.2);
+        $this->assertEmpty ( $data );
+        $this->assertSame([], $data);
+    }
+
     protected function factory()
     {
         $factory = Mockery::mock(Guzzle::class);
@@ -54,6 +63,9 @@ class ClientTest extends TestCase
             }
             if (str_contains($url, 'GetGoodsType')) {
                 $body = file_get_contents(__DIR__ . '/get_goods_type.json');
+            }
+            if ( str_contains ( $url, 'GetPriceTrial' ) ) {
+                $body = file_get_contents ( __DIR__ . '/get_price_trial.json' );
             }
 
             return new Response(200, [], $body);
