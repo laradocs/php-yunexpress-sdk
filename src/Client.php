@@ -5,6 +5,7 @@ namespace Laradocs\YunExpress;
 use GuzzleHttp\Psr7\Response;
 use JsonException;
 use GuzzleHttp\Client as Guzzle;
+use Laradocs\YunExpress\Exceptions\ParamInvalidException;
 use Laradocs\YunExpress\Exceptions\TokenExpiredException;
 
 class Client
@@ -167,7 +168,10 @@ class Client
             throw new TokenExpiredException();
         }
         if ($data['Code'] !== '0000') {
-            throw new TokenExpiredException();
+            if ( $data['Code'] !== '401' ) {
+                throw new ParamInvalidException($data['Message']);
+            }
+            throw new TokenExpiredException($data['Message']);
         }
 
         return $data['Items'] ?? $data['Item'] ?? [];
