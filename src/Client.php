@@ -49,17 +49,31 @@ class Client
     /**
      * 查询运输方式
      *
-     * @param string|null $country
+     * @param string|null $countryCode
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getShippingMethods(?string $countryCode = null): array
     {
-        if (is_null($countryCode)) {
+        if (!is_null($countryCode)) {
             $countryCode = '?CountryCode=' . $countryCode;
         }
         $response = $this->factory()
             ->get('Common/GetShippingMethods' . $countryCode);
+
+        return $this->body($response);
+    }
+
+    /**
+     * 查询货品类型
+     *
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getGoodsType()
+    {
+        $response = $this->factory()
+            ->get ( 'Common/GetGoodsType' );
 
         return $this->body($response);
     }
