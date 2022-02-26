@@ -1,0 +1,24 @@
+{
+  "Item": {
+    "CountryCode": "AU",
+    "WaybillNumber": "YT2222222222222222",
+    "TrackingNumber": "",
+    "CarrierName": "",
+    "CreatedBy": null,
+    "PackageState": 1,
+    "TrackingStatus": 10,
+    "IntervalDays": -1.0,
+    "OrderTrackingDetails": [
+      {
+        "ProcessContent": "xxxxxxx xxxxxxx xxxxxxx",
+        "ProcessLocation": null,
+        "ProcessDate": "2021-12-28T23:38:38",
+        "TrackingStatus": 10
+      }
+    ]
+  },
+  "Code": "0000",
+  "Message": "提交成功",
+  "RequestId": "335ce0f033ea49bca75be49bd96bf451",
+  "TimeStamp": "2022-02-26T09:30:52.5274373+00:00"
+}
