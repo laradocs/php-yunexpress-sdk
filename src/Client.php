@@ -115,6 +115,54 @@ class Client
     }
 
     /**
+     * 运单申请
+     *
+     * @param array $attributes
+     * 用法：
+     * ```php
+     * createOrder([
+     *     [
+     *         "CustomerOrderNumber" => "2022021008567562", // 客户订单号，不能重复
+     *         "ShippingMethodCode" => "BKPHR", // 运输方式代码
+     *         "PackageCount" => 1, // 运单包裹的件数，必须大于 0 的整数
+     *         "Weight" => 0.2, // 预估包裹总重量，单位 kg,最多 3 位小数
+     *         "Receiver" => [
+     *             "CountryCode" => "US", // 收件人所在国家，填写国际通用标准2位简码，可通过国家查询服务查询
+     *             "FirstName" => "Test First Name", // 收件人姓
+     *             "Street" => "Test Street", // 收件人详细地址
+     *             "City" => "Test City", // 收件人所在城市
+     *             "Zip" => "12345", // 收件人邮编
+     *         ],
+     *         "Parcels" => [
+     *             [
+     *                 "EName": "Test Product", // 包裹申报名称(英文)
+     *                 "CName": "测试商品", // 包裹申报名称(中文)
+     *                 "Quantity": 1, // 申报数量
+     *                 "UnitPrice": 19.99, // 申报价格(单价)
+     *                 "UnitWeight": 0.2, // 申报重量(单重)
+     *                 "CurrencyCode": "USD", // 申报币种
+     *             ]
+     *         ]
+     *     ]
+     *     .
+     *     .
+     *     .
+     * ]);
+     * ```
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function createOrder(array $attributes): array
+    {
+        $response = $this->factory()
+            ->post('WayBill/CreateOrder', [
+                'json' => $attributes,
+            ]);
+
+        return $this->body($response);
+    }
+
+    /**
      * 查询发件人信息
      *
      * @param string $orderNumber 查询号码，可输入运单号、订单号、跟踪号

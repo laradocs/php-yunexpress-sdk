@@ -59,6 +59,15 @@ class ClientTest extends TestCase
         $this->assertSame(2, $data[0]['Status']);
     }
 
+    public function testCreateOrder()
+    {
+        $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
+        $factory->shouldReceive('factory')->andReturn($this->factory());
+        $data = $factory->createOrder(['xxx']);
+        $this->assertNotEmpty($data);
+        $this->assertSame(1, $data[0]['Success']);
+    }
+
     public function testGetSender()
     {
         $factory = Mockery::mock(Client::class . '[factory]', ['xxx']);
@@ -151,6 +160,9 @@ class ClientTest extends TestCase
             return new Response(200, [], $body);
         });
         $factory->shouldReceive('post')->withAnyArgs()->andReturnUsing(function ($url) {
+            if (str_contains($url, 'CreateOrder')) {
+                $body = file_get_contents(__DIR__ . '/create_order.json');
+            }
             if (str_contains($url, 'GetCarrier')) {
                 $body = file_get_contents(__DIR__ . '/get_carrier.json');
             }

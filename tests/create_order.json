@@ -1,0 +1,19 @@
+{
+  "Item": [
+    {
+      "CustomerOrderNumber": "2022021008567562",
+      "Success": 1,
+      "TrackType": "2",
+      "Remark": "",
+      "AgentNumber": null,
+      "WayBillNumber": "YT2222222222222222",
+      "RequireSenderAddress": 0,
+      "TrackingNumber": null,
+      "ShipperBoxs": null
+    }
+  ],
+  "Code": "0000",
+  "Message": "提交成功!",
+  "RequestId": "0HMFNARUV35KI:00000002",
+  "TimeStamp": "2022-02-26T10:10:36.1270164+00:00"
+}

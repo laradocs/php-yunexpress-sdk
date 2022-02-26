@@ -1,0 +1,12 @@
+{
+  "Item": {
+    "OrderNumber": "2022021008567562",
+    "Status": "5012",
+    "Type": 2,
+    "Remark": "删除成功!"
+  },
+  "Code": "0000",
+  "Message": "提交成功!",
+  "RequestId": "0HMFNARV50L7V:00000002",
+  "TimeStamp": "2022-02-26T10:16:51.8487159+00:00"
+}
