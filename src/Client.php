@@ -115,6 +115,21 @@ class Client
     }
 
     /**
+     * 查询发件人信息
+     *
+     * @param string $orderNumber 查询号码，可输入运单号、订单号、跟踪号
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getSender(string $orderNumber): array
+    {
+        $response = $this->factory()
+            ->get('WayBill/GetSender?OrderNumber=' . $orderNumber);
+
+        return $this->body($response);
+    }
+
+    /**
      * 运单申请
      *
      * @param array $attributes
@@ -158,21 +173,6 @@ class Client
             ->post('WayBill/CreateOrder', [
                 'json' => $attributes,
             ]);
-
-        return $this->body($response);
-    }
-
-    /**
-     * 查询发件人信息
-     *
-     * @param string $orderNumber 查询号码，可输入运单号、订单号、跟踪号
-     * @return array
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
-    public function getSender(string $orderNumber): array
-    {
-        $response = $this->factory()
-            ->get('WayBill/GetSender?OrderNumber=' . $orderNumber);
 
         return $this->body($response);
     }
